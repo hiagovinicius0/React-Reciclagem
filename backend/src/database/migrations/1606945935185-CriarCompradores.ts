@@ -1,0 +1,30 @@
+import {MigrationInterface, QueryRunner, Table} from "typeorm";
+
+export class CriarCompradores1606945935185 implements MigrationInterface {
+
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.createTable(
+            new Table({
+                name: 'compradores',
+                columns: [
+                    {
+                        name: 'id',
+                        type: 'uuid',
+                        isPrimary: true,
+                        generationStrategy: 'uuid',
+                        default: 'uuid_generate_v4()',
+                    },
+                    {
+                        name: 'nome',
+                        type: 'varchar',
+                    }
+                ]
+            })
+        )
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable('compradores');
+    }
+
+}

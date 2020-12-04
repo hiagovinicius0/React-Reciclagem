@@ -1,0 +1,8 @@
+backend/node_modules/*
+backend/tmp/*
+backend/!tmp/.gitkeep
+backend/events/*
+backend/!events/.gitkeep
+backend/yarn.lock
+frontend/yarn.lock
+frontend/node_modules/*
